@@ -17,7 +17,7 @@ class LinkedStack:
 	# stack methods
 	def __init__(self):
 		"""Create an empty stack."""
-		#reference to head node
+		# reference to head node
 		self._head = None
 		self._size = 0
 
@@ -62,7 +62,8 @@ class LinkedStack:
 		"""Display elements of stack."""
 		current = self._head
 		output = ""
-		while current != None:
+		# traverse through linked list
+		while current:
 			output += str(current._element) + " "
 			current = current._next
 		return output

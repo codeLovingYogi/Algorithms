@@ -25,7 +25,9 @@ def add_last(a_linked_list, element):
 def remove_first(a_linked_list):
 	if L.head is None:
 		print("List is empty")
+	# set linked list head to reference new node
 	a_linked_list.head = a_linked_list.head.next
+	# decrement node count
 	a_linked_list.size = a_linked_list.size - 1
 
 

@@ -1,7 +1,10 @@
 def merge(a, b, a_list):
 	""" Merge two sorted lists a and b into a_list."""
+	# pointers to traverse through a and b
 	i = j = 0
 	while i + j < len(a_list):
+		# if we reach end of array b, copy remaining elements from a
+		# always take the smaller of two elements from both arrays
 		if j == len(b) or (i < len(a) and a[i] < b[j]):
 			a_list[i+j] = a[i]
 			i+=1
