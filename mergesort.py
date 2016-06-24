@@ -34,20 +34,3 @@ def merge_sort(a_list):
 	# merge sorted halves back into a_list
 	merge(a, b, a_list)
 
-my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-print('Presorted list 1: ', my_list)
-merge_sort(my_list)
-print('My sorted list 1: ', my_list)
-my_list = []
-print('Presorted list 2: ', my_list)
-merge_sort(my_list)
-print('My sorted list 2: ', my_list)
-my_list = [1, 2, 3]
-print('Presorted list 3: ', my_list)
-merge_sort(my_list)
-print('My sorted list 3: ', my_list)
-my_list = [100, 90, 80, 70]
-print('Presorted list 4: ', my_list)
-merge_sort(my_list)
-print('My sorted list 4: ', my_list)
-	

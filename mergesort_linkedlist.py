@@ -1,19 +1,21 @@
-def merge(a, b, a_queue):
+from linkedqueue import LinkedQueue
+
+def merge_queue(a, b, a_queue):
 	""" Merge two sorted queues a and b into a_queue."""
 	while not a.is_empty() and not b.is_empty():
 		# always take the smaller of two elements from both arrays
 		if a.first() < b.first():
-			a_queue(a.dequeue())
+			a_queue.enqueue(a.dequeue())
 		else:
-			a_queue(b.dequeue())
-		# move remaining elements of a to a_queue
-		while not a.is_empty():
-			a_queue(a.dequeue())
-		# move remaining elements of b to a_queue
-		while not b.is_empty():
-			a_queue(b.dequeue())
+			a_queue.enqueue(b.dequeue())
+	# move remaining elements of a to a_queue
+	while not a.is_empty():
+		a_queue.enqueue(a.dequeue())
+	# move remaining elements of b to a_queue
+	while not b.is_empty():
+		a_queue.enqueue(b.dequeue())
 
-def merge_sort(a_queue):
+def merge_sort_queue(a_queue):
 	"""Sort elements of a_queue using merge-sort algorithm."""
 	n = len(a_queue)
 
@@ -32,8 +34,9 @@ def merge_sort(a_queue):
 		b.enqueue(a_queue.dequeue())
 	
 	# conquer recursively
-	merge_sort(a)
-	merge_sort(b)
+	merge_sort_queue(a)
+	merge_sort_queue(b)
 
 	# merge sorted halves back into a_queue
-	merge(a, b, a_queue)
+	merge_queue(a, b, a_queue)
+
