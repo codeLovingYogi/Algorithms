@@ -6,24 +6,23 @@ def quick_sort(a_list, left, right):
 	# last element of range is pivot
 	pivot = a_list[right]
 	# use to scan rightward
-	i = left
+	l = left
 	# use to scan leftward
-	j = right
-	while i <= j:
-		# scan until value >= pivot (or right marker reached)
-		while i <= j and a_list[i] < pivot:
-			i += 1
-		# scan until value <= pivot (or left marker reached)
-		while i <= j and a_list[j] > pivot:
-			j -= 1
-		# swap values
-		if i <= j:
-			a_list[i], a_list[j] = a_list[j], a_list[i]
-			left, right = left + 1, right - 1
+	r = right - 1
+	while l <= r:
+		# scan from left until value >= pivot (or right marker)
+		while l <= r and a_list[l] < pivot:
+			l += 1
+		# scan from right until value <= pivot (or left marker)
+		while l <= r and a_list[r] > pivot:
+			r -= 1
+		# swap values if l and r pointers have not crossed
+		if l <= r:
+			a_list[l], a_list[r] = a_list[r], a_list[l]
+			l, r = l + 1, r - 1
 
-	# put pivot in correct place (marked by j index)
-	a_list[j], a_list[left] = a_list[left], a_list[j]
+	# put pivot in correct place (marked by l index)
+	a_list[l], a_list[right] = a_list[right], a_list[l]
 	# make recursive calls
-	quick_sort(a_list, left, j - 1)
-	quick_sort(a_list, j + 1, right)
-
+	quick_sort(a_list, left, l - 1)
+	quick_sort(a_list, l + 1, right)
