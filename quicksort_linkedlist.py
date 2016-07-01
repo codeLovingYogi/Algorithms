@@ -1,6 +1,6 @@
 from linkedqueue import LinkedQueue
 
-def quick_sort(a_queue):
+def quick_sort_queue(a_queue):
 	"""Sort elements of a_queue using quick-sort algorithm."""
 	n = len(a_queue)
 
@@ -22,10 +22,10 @@ def quick_sort(a_queue):
 			greater.enqueue(a_queue.dequeue())
 		else:
 			equal.enqueue(a_queue.dequeue())
-
+			
 	# conquer using recursion
-	quick_sort(less)
-	quick_sort(greater)
+	quick_sort_queue(less)
+	quick_sort_queue(greater)
 
 	# concatenate results
 	while not less.is_empty():
@@ -34,3 +34,4 @@ def quick_sort(a_queue):
 		a_queue.enqueue(equal.dequeue())
 	while not greater.is_empty():
 		a_queue.enqueue(greater.dequeue())
+		

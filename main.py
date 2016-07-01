@@ -2,7 +2,7 @@ from mergesort import merge, merge_sort
 from linkedstack import LinkedStack
 from linkedqueue import LinkedQueue
 from mergesort_linkedlist import merge_queue, merge_sort_queue
-from quicksort_linkedlist import quick_sort
+from quicksort_linkedlist import quick_sort_queue
 
 
 # merge sort
@@ -91,5 +91,24 @@ my_quickqueue.enqueue(18)
 my_quickqueue.enqueue(12)
 my_quickqueue.enqueue(9)
 print('my queue: ', my_quickqueue.display())
-quick_sort(my_quickqueue)
+quick_sort_queue(my_quickqueue)
 print('my sorted queue: ', my_quickqueue.display())
+
+my_quickqueue2 = LinkedQueue()
+my_quickqueue2.enqueue(21)
+my_quickqueue2.enqueue(18)
+my_quickqueue2.enqueue(12)
+my_quickqueue2.enqueue(9)
+my_quickqueue2.enqueue(54)
+my_quickqueue2.enqueue(23)
+my_quickqueue2.enqueue(35)
+print('my queue 2: ', my_quickqueue2.display())
+quick_sort_queue(my_quickqueue2)
+print('my sorted queue 2: ', my_quickqueue2.display())
+
+# Quick-sort
+print('*****Quick-sort testing*****')
+my_quicksort_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+print('Presorted list: ', my_quicksort_list)
+merge_sort(my_quicksort_list)
+print('My sorted list: ', my_quicksort_list)
