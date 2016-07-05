@@ -4,6 +4,7 @@ from linkedqueue import LinkedQueue
 from mergesort_linkedlist import merge_queue, merge_sort_queue
 from quicksort_linkedlist import quick_sort_queue
 from quicksort import quick_sort
+from bucketsort import bucket_sort
 
 # merge sort
 print('*****Merge-sort testing****')
@@ -124,3 +125,10 @@ my_quicksort_list4 = [100, 90, 80, 70]
 print('Presorted list 4: ', my_quicksort_list4)
 quick_sort(my_quicksort_list4, 0, len(my_quicksort_list4)-1)
 print('My sorted list 4: ', my_quicksort_list4)
+
+# Bucket-sort
+print('*****Bucket-sort testing*****')
+sequence = [[0, "b"], [3, "c"], [0, "a"], [2, "e"], [1, "d"]]
+print('Presorted list: ', sequence)
+bucket_sort(sequence)
+print('After bucket-sort: ', sequence)
