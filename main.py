@@ -5,6 +5,7 @@ from mergesort_linkedlist import merge_queue, merge_sort_queue
 from quicksort_linkedlist import quick_sort_queue
 from quicksort import quick_sort
 from bucketsort import bucket_sort
+from quickselect import quick_select
 
 # merge sort
 print('*****Merge-sort testing****')
@@ -132,3 +133,17 @@ sequence = [[0, "b"], [3, "c"], [0, "a"], [2, "e"], [1, "d"]]
 print('Presorted list: ', sequence)
 bucket_sort(sequence)
 print('After bucket-sort: ', sequence)
+
+# Quick-select
+print('*****Quick-select testing*****')
+my_quickselect_list = [24, 34, 2, 7, 12, 98, 52]
+print('List: ', my_quickselect_list)
+k = 4
+selection = quick_select(my_quickselect_list, k)
+print(k, "th element: ", selection)
+k = 6
+selection = quick_select(my_quickselect_list, k)
+print(k, "th element: ", selection)
+k = 1
+selection = quick_select(my_quickselect_list, k)
+print(k, "th element: ", selection)
