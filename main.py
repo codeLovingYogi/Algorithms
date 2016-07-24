@@ -7,6 +7,7 @@ from quicksort import quick_sort
 from bucketsort import bucket_sort
 from quickselect import quick_select
 from graph_adjacencymap import Graph
+from depth_first_search import DFS
 
 # # merge sort
 # print('*****Merge-sort testing****')
@@ -151,7 +152,7 @@ from graph_adjacencymap import Graph
 
 # Adjacency Map Graph
 print('*****Graph - Adjacency Map testing*****')
-edges = (('A','B'), ('A','E'), ('A','F'))
+edges = (('A','B'), ('A','E'), ('A','F'), ('B', 'E'), ('F', 'B'))
 my_graph = Graph()
 vertices = set()
 for e in edges:
@@ -174,6 +175,13 @@ print('edges: ', my_graph.edges())
 print('degree: ', my_graph.degree(verts["F"]))
 print('degree: ', my_graph.degree(verts["A"]))
 print('incident edges: ', my_graph.incident_edges(verts["A"]))
+
+# Depth-first Search
+print('*****Depth-first Search testing*****')
+u = verts["A"]
+result = {u : None}
+DFS(my_graph, u, result)
+print('result: ', len(result))
 
 
 
