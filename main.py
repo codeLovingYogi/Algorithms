@@ -151,10 +151,29 @@ from graph_adjacencymap import Graph
 
 # Adjacency Map Graph
 print('*****Graph - Adjacency Map testing*****')
+edges = (('A','B'), ('A','E'), ('A','F'))
 my_graph = Graph()
-my_graph.insert_vertex("a")
-my_graph.insert_vertex("b")
+vertices = set()
+for e in edges:
+	vertices.add(e[0])
+	vertices.add(e[1])
+
+verts = {}
+for v in vertices:
+	verts[v] = my_graph.insert_vertex(v)
+
+for e in edges:
+	src = e[0]
+	dest = e[1]
+	my_graph.insert_edge(verts[src], verts[dest])
 print('is directed: ', my_graph.is_directed())
 print('vertex count: ', my_graph.vertex_count())
 print('vertices: ', my_graph.vertices())
+print('edge count: ', my_graph.edge_count())
+print('edges: ', my_graph.edges())
+print('degree: ', my_graph.degree(verts["F"]))
+print('degree: ', my_graph.degree(verts["A"]))
+print('incident edges: ', my_graph.incident_edges(verts["A"]))
+
+
 
