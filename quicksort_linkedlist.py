@@ -1,4 +1,4 @@
-from linkedqueue import LinkedQueue
+from linkedqueue import linked_queue
 
 def quick_sort_queue(a_queue):
 	"""Sort elements of a_queue using quick-sort algorithm."""
@@ -11,9 +11,9 @@ def quick_sort_queue(a_queue):
 	# divide
 	# use first as arbitrary pivot
 	pivot = a_queue.first()
-	less = LinkedQueue()
-	equal = LinkedQueue()
-	greater = LinkedQueue()
+	less = linked_queue()
+	equal = linked_queue()
+	greater = linked_queue()
 	# divide a_queue into less than, equal to, or greater than pivot
 	while not a_queue.is_empty():
 		if a_queue.first() < pivot:

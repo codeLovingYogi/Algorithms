@@ -1,4 +1,4 @@
-class LinkedStack:
+class linked_stack:
 	"""LIFO Stack implementation using a singly linked list."""
 
 	# nested _Node class

@@ -1,13 +1,13 @@
 from mergesort import merge, merge_sort
-from linkedstack import LinkedStack
-from linkedqueue import LinkedQueue
+from linkedstack import linked_stack
+from linkedqueue import linked_queue
 from mergesort_linkedlist import merge_queue, merge_sort_queue
 from quicksort_linkedlist import quick_sort_queue
 from quicksort import quick_sort
 from bucketsort import bucket_sort
 from quickselect import quick_select
 from graph_adjacencymap import Graph
-from depth_first_search import DFS
+from depthfirstsearch import DFS, construct_path, DFS_complete
 
 # # merge sort
 # print('*****Merge-sort testing****')
@@ -30,7 +30,7 @@ from depth_first_search import DFS
 
 # # linked stack
 # print('*****Linked stack testing*****')
-# my_stack = LinkedStack()
+# my_stack = linked_stack()
 # print('head: ', my_stack._head)
 # print('size: ', my_stack._size)
 # print('my stack: ', my_stack.display())
@@ -54,7 +54,7 @@ from depth_first_search import DFS
 
 # # linked queue
 # print('*****Linked queue testing*****')
-# my_queue = LinkedQueue()
+# my_queue = linked_queue()
 # print('head: ', my_queue._head)
 # print('tail: ', my_queue._tail)
 # print('size: ', my_queue._size)
@@ -86,7 +86,7 @@ from depth_first_search import DFS
 
 # # Quick-sort linked queue
 # print('*****Quick-sort linked queue testing*****')
-# my_quickqueue = LinkedQueue()
+# my_quickqueue = linked_queue()
 # my_quickqueue.enqueue(54)
 # my_quickqueue.enqueue(35)
 # my_quickqueue.enqueue(23)
@@ -98,7 +98,7 @@ from depth_first_search import DFS
 # quick_sort_queue(my_quickqueue)
 # print('my sorted queue: ', my_quickqueue.display())
 
-# my_quickqueue2 = LinkedQueue()
+# my_quickqueue2 = linked_queue()
 # my_quickqueue2.enqueue(21)
 # my_quickqueue2.enqueue(18)
 # my_quickqueue2.enqueue(12)
@@ -179,9 +179,15 @@ print('incident edges: ', my_graph.incident_edges(verts["A"]))
 # Depth-first Search
 print('*****Depth-first Search testing*****')
 u = verts["A"]
-result = {u : None}
-DFS(my_graph, u, result)
-print('result: ', len(result))
+dfs_result = {u : None}
+DFS(my_graph, u, dfs_result)
+print('result: ', len(dfs_result))
+path = construct_path(verts["A"], verts["F"], dfs_result)
+print('path: ', path)
+forest = DFS_complete(my_graph)
+print('length of forest: ', len(forest))
+
+
 
 
 

@@ -1,4 +1,4 @@
-from linkedqueue import LinkedQueue
+from linkedqueue import linked_queue
 
 def merge_queue(a, b, a_queue):
 	""" Merge two sorted queues a and b into a_queue."""
@@ -24,8 +24,8 @@ def merge_sort_queue(a_queue):
 		return
 
 	# divide: split list
-	a = LinkedQueue()
-	b = LinkedQueue()
+	a = linked_queue()
+	b = linked_queue()
 	# move first n//2 elements to a
 	while len(a) < n // 2:
 		a.enqueue(a_queue.dequeue())

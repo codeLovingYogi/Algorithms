@@ -1,4 +1,4 @@
-class LinkedQueue:
+class linked_queue:
 	"""FIFO queue implementation using a singly linked list."""
 
 	# nested _Node class
