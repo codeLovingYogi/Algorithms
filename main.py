@@ -8,6 +8,7 @@ from bucketsort import bucket_sort
 from quickselect import quick_select
 from graph_adjacencymap import Graph
 from depthfirstsearch import DFS, construct_path, DFS_complete
+from breadthfirstsearch import BFS
 
 # # merge sort
 # print('*****Merge-sort testing****')
@@ -152,7 +153,7 @@ from depthfirstsearch import DFS, construct_path, DFS_complete
 
 # Adjacency Map Graph
 print('*****Graph - Adjacency Map testing*****')
-edges = (('A','B'), ('A','E'), ('A','F'), ('B', 'E'), ('F', 'B'))
+edges = (('A','B'), ('A','E'), ('A','F'), ('B', 'E'), ('F','B'), ('Z','Y'))
 my_graph = Graph()
 vertices = set()
 for e in edges:
@@ -186,6 +187,13 @@ path = construct_path(verts["A"], verts["F"], dfs_result)
 print('path: ', path)
 forest = DFS_complete(my_graph)
 print('length of forest: ', len(forest))
+
+# Breadth-first Search
+print('*****Breadth-first Search testing*****')
+s = verts["B"]
+bfs_result = {s : None}
+BFS(my_graph, s, bfs_result)
+print('result: ', len(dfs_result))
 
 
 

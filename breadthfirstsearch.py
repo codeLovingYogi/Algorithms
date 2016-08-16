@@ -1,4 +1,4 @@
-def BFS()(grph, s, discovered):
+def BFS(grph, s, discovered):
 	"""Perform BFS of undiscovered portion of Graph grph starting at Vertex s.
 
 	discovered is a dictionary mapping each vertex to the edge that was used to discover it during BFS. (s should be mapped to None prior to the call).
