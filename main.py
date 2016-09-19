@@ -9,6 +9,7 @@ from quickselect import quick_select
 from graph_adjacencymap import Graph
 from depthfirstsearch import DFS, construct_path, DFS_complete
 from breadthfirstsearch import BFS
+from binarysearch import binary_search
 
 # # merge sort
 # print('*****Merge-sort testing****')
@@ -151,50 +152,62 @@ from breadthfirstsearch import BFS
 # selection = quick_select(my_quickselect_list, k)
 # print(k, "th element: ", selection)
 
-# Adjacency Map Graph
-print('*****Graph - Adjacency Map testing*****')
-edges = (('A','B'), ('A','E'), ('A','F'), ('B', 'E'), ('F','B'), ('Z','Y'))
-my_graph = Graph()
-vertices = set()
-for e in edges:
-	vertices.add(e[0])
-	vertices.add(e[1])
+# # Adjacency Map Graph
+# print('*****Graph - Adjacency Map testing*****')
+# edges = (('A','B'), ('A','E'), ('A','F'), ('B', 'E'), ('F','B'), ('Z','Y'))
+# my_graph = Graph()
+# vertices = set()
+# for e in edges:
+# 	vertices.add(e[0])
+# 	vertices.add(e[1])
 
-verts = {}
-for v in vertices:
-	verts[v] = my_graph.insert_vertex(v)
+# verts = {}
+# for v in vertices:
+# 	verts[v] = my_graph.insert_vertex(v)
 
-for e in edges:
-	src = e[0]
-	dest = e[1]
-	my_graph.insert_edge(verts[src], verts[dest])
-print('is directed: ', my_graph.is_directed())
-print('vertex count: ', my_graph.vertex_count())
-print('vertices: ', my_graph.vertices())
-print('edge count: ', my_graph.edge_count())
-print('edges: ', my_graph.edges())
-print('degree: ', my_graph.degree(verts["F"]))
-print('degree: ', my_graph.degree(verts["A"]))
-print('incident edges: ', my_graph.incident_edges(verts["A"]))
+# for e in edges:
+# 	src = e[0]
+# 	dest = e[1]
+# 	my_graph.insert_edge(verts[src], verts[dest])
+# print('is directed: ', my_graph.is_directed())
+# print('vertex count: ', my_graph.vertex_count())
+# print('vertices: ', my_graph.vertices())
+# print('edge count: ', my_graph.edge_count())
+# print('edges: ', my_graph.edges())
+# print('degree: ', my_graph.degree(verts["F"]))
+# print('degree: ', my_graph.degree(verts["A"]))
+# print('incident edges: ', my_graph.incident_edges(verts["A"]))
 
-# Depth-first Search
-print('*****Depth-first Search testing*****')
-u = verts["A"]
-dfs_result = {u : None}
-DFS(my_graph, u, dfs_result)
-print('result: ', len(dfs_result))
-path = construct_path(verts["A"], verts["F"], dfs_result)
-print('path: ', path)
-forest = DFS_complete(my_graph)
-print('length of forest: ', len(forest))
+# # Depth-first Search
+# print('*****Depth-first Search testing*****')
+# u = verts["A"]
+# dfs_result = {u : None}
+# DFS(my_graph, u, dfs_result)
+# print('result: ', len(dfs_result))
+# path = construct_path(verts["A"], verts["F"], dfs_result)
+# print('path: ', path)
+# forest = DFS_complete(my_graph)
+# print('length of forest: ', len(forest))
 
-# Breadth-first Search
-print('*****Breadth-first Search testing*****')
-s = verts["B"]
-bfs_result = {s : None}
-BFS(my_graph, s, bfs_result)
-print('result: ', len(dfs_result))
+# # Breadth-first Search
+# print('*****Breadth-first Search testing*****')
+# s = verts["B"]
+# bfs_result = {s : None}
+# BFS(my_graph, s, bfs_result)
+# print('result: ', len(dfs_result))
 
+# Binary Search
+print('*****Binary Search testing*****')
+binary_list = [2, 5, 6, 43, 76, 93, 124, 300, 431, 678]
+print('List: ', binary_list)
+target = 4
+target2 = 76
+low = 0
+high = len(binary_list)-1
+found = binary_search(binary_list, target, low, high)
+print(target, 'found: ', found)
+found = binary_search(binary_list, target2, low, high)
+print(target2, 'found: ', found)
 
 
 
