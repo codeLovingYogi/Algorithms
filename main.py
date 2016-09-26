@@ -10,6 +10,7 @@ from graph_adjacencymap import Graph
 from depthfirstsearch import DFS, construct_path, DFS_complete
 from breadthfirstsearch import BFS
 from binarysearch import binary_search
+from arraystack import ArrayStack
 
 # # merge sort
 # print('*****Merge-sort testing****')
@@ -197,17 +198,32 @@ from binarysearch import binary_search
 # print('result: ', len(dfs_result))
 
 # Binary Search
-print('*****Binary Search testing*****')
-binary_list = [2, 5, 6, 43, 76, 93, 124, 300, 431, 678]
-print('List: ', binary_list)
-target = 4
-target2 = 76
-low = 0
-high = len(binary_list)-1
-found = binary_search(binary_list, target, low, high)
-print(target, 'found: ', found)
-found = binary_search(binary_list, target2, low, high)
-print(target2, 'found: ', found)
+# print('*****Binary Search testing*****')
+# binary_list = [2, 5, 6, 43, 76, 93, 124, 300, 431, 678]
+# print('List: ', binary_list)
+# target = 4
+# target2 = 76
+# low = 0
+# high = len(binary_list)-1
+# found = binary_search(binary_list, target, low, high)
+# print(target, 'found: ', found)
+# found = binary_search(binary_list, target2, low, high)
+# print(target2, 'found: ', found)
+
+# Array stack
+print('*****Array stack testing*****')
+my_array_stack = ArrayStack()
+print('is empty: ', my_array_stack.is_empty())
+my_array_stack.push(54)
+my_array_stack.push(26)
+my_array_stack.push(93)
+my_array_stack.push(17)
+print(len(my_array_stack))
+print(my_array_stack.top())
+print(my_array_stack.pop())
+print(my_array_stack.pop())
+print(len(my_array_stack))
+
 
 
 
