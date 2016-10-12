@@ -12,6 +12,7 @@ from breadthfirstsearch import BFS
 from binarysearch import binary_search
 from arraystack import ArrayStack
 from linkedlist import LinkedList
+from binarysearchtree import BinarySearchTree
 
 
 # # merge sort
@@ -226,23 +227,39 @@ from linkedlist import LinkedList
 # print(my_array_stack.pop())
 # print(len(my_array_stack))
 
-# Linked List 
-print('*****Linked list testing*****')
-myList = LinkedList()
-myList.insert(3)
-myList.insert(5)
-myList.insert(8)
-myList.insert(4)
-print(myList.size)
-myList.display()
-myList.reverse()
-print()
-myList.display()
-print()
-myList.delete_first()
-myList.display()
-print()
-myList.delete(8)
-myList.display()
-print()
-print(myList.size)
+# # Linked List 
+# print('*****Linked list testing*****')
+# myList = LinkedList()
+# myList.insert(3)
+# myList.insert(5)
+# myList.insert(8)
+# myList.insert(4)
+# print(myList.size)
+# myList.display()
+# myList.reverse()
+# print()
+# myList.display()
+# print()
+# myList.delete_first()
+# myList.display()
+# print()
+# myList.delete(8)
+# myList.display()
+# print()
+# print(myList.size)
+
+# Binary Search Tree
+print('*****Binary search tree testing*****')
+my_tree = BinarySearchTree()
+root = None
+root = my_tree.insert(root, 3)
+my_tree.insert(root, 7)
+my_tree.insert(root, 1)
+my_tree.insert(root, 5)
+my_tree.insert(root, 10)
+print('in order')
+my_tree.display_in_order(root)
+print('pre order')
+my_tree.display_pre_order(root)
+print('post order')
+my_tree.display_post_order(root)
