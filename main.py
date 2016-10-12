@@ -11,6 +11,8 @@ from depthfirstsearch import DFS, construct_path, DFS_complete
 from breadthfirstsearch import BFS
 from binarysearch import binary_search
 from arraystack import ArrayStack
+from linkedlist import LinkedList
+
 
 # # merge sort
 # print('*****Merge-sort testing****')
@@ -210,21 +212,37 @@ from arraystack import ArrayStack
 # found = binary_search(binary_list, target2, low, high)
 # print(target2, 'found: ', found)
 
-# Array stack
-print('*****Array stack testing*****')
-my_array_stack = ArrayStack()
-print('is empty: ', my_array_stack.is_empty())
-my_array_stack.push(54)
-my_array_stack.push(26)
-my_array_stack.push(93)
-my_array_stack.push(17)
-print(len(my_array_stack))
-print(my_array_stack.top())
-print(my_array_stack.pop())
-print(my_array_stack.pop())
-print(len(my_array_stack))
+# # Array stack
+# print('*****Array stack testing*****')
+# my_array_stack = ArrayStack()
+# print('is empty: ', my_array_stack.is_empty())
+# my_array_stack.push(54)
+# my_array_stack.push(26)
+# my_array_stack.push(93)
+# my_array_stack.push(17)
+# print(len(my_array_stack))
+# print(my_array_stack.top())
+# print(my_array_stack.pop())
+# print(my_array_stack.pop())
+# print(len(my_array_stack))
 
-
-
-
-
+# Linked List 
+print('*****Linked list testing*****')
+myList = LinkedList()
+myList.insert(3)
+myList.insert(5)
+myList.insert(8)
+myList.insert(4)
+print(myList.size)
+myList.display()
+myList.reverse()
+print()
+myList.display()
+print()
+myList.delete_first()
+myList.display()
+print()
+myList.delete(8)
+myList.display()
+print()
+print(myList.size)
