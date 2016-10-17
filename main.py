@@ -263,3 +263,9 @@ print('pre order')
 my_tree.display_pre_order(root)
 print('post order')
 my_tree.display_post_order(root)
+val = 7
+print('contains', val, my_tree.contains(root, val))
+val = 2
+print('contains', val, my_tree.contains(root, val))
+val = 10
+print('contains', val, my_tree.contains(root, val))
